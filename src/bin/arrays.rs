@@ -18,7 +18,7 @@ fn main() {
     println!("{:?}", arr);
 
     // Slice - length not known at compile time
-    let nums: [i32; 10] = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5];
+    let mut nums: [i32; 10] = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5];
 
     // First 3 elements
     let s = &nums[0..3]; // 0, 1, 2
@@ -37,7 +37,12 @@ fn main() {
     println!("last 3 elements: {:?}", s);
 
     // All elements
-    let s = &nums[..];
+    let s = &mut nums[..];
 
-    println!("all elements: {:?}", s)
+    println!("all elements: {:?}", s);
+
+    // What happens if we change s
+    s[1] = 2;
+
+    println!("{:?}", nums);
 }
