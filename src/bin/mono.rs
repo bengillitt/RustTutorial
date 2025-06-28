@@ -12,6 +12,7 @@ fn get_x<T>(p: Point<T>) -> T {
 
 fn main() {
     // Monomorphization increases compile time and size of binary, so generic methods aren't preferable
+    // upside is that there is no runtime overhead
     let p0: Point<u32> = Point { x: 0, y: 0 };
     let p1: Point<i32> = Point { x: 0, y: 0 };
 
